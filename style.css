@@ -21,7 +21,8 @@ body{
     font-size: 20px;
     padding: 12px;
     background:silver;
-    color: gray;
+    color: black;
+    font-weight: bold;
     border-radius: 5px 0 0 5px;
 }
 #searchbox button{
@@ -34,20 +35,23 @@ body{
     border: 2px solid red;
 }
 #mealList{
-   align-items: center;
-   margin: 80px ;
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    grid-gap:20px;
-   
     
+    align-items: center;
+    margin: 100px ;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-gap:20px;
+    width: 100px;
+    padding-left: 10px;
 }
 .meal{
     border:2px solid black;
     border-radius: 10px;
-    padding: px;
     text-align: center;
     width:100%;
+}
+.meal img{
+    width: 200px;
 }
 p{
     background: gray;
