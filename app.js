@@ -12,19 +12,45 @@ const searchMeal = () => {
 
 const displayMeals = foods => {
     const mealContainer = document.getElementById('mealList');
+    mealContainer.innerHTML = '';
+  
     foods.forEach(food => {
         const mealDiv = document.createElement('div');
         mealDiv.className = 'meal';
         mealDiv.innerHTML = `
+        <div onclick=" getDetails('${food.strMealThumb}', '${food.strMeal}')">
         <img src="${food.strMealThumb}"></img>  
-     <div> 
-     <p><button onclick="displayMealDetail('${food.strCategoryThumb}')">${food.strCategory}</button></p>
-     </div>
+        <div> 
+        <p>${food.strMeal}</p>
+        </div>
+        </div>
         `
         mealContainer.appendChild(mealDiv);
     }
     );
 }
+
+const getDetails = (image, name) =>{
+    console.log(image, name);
+
+     const upadanDetails = document.getElementById('upadanDetail');
+     upadanDetails.innerHTML = '';
+    // upadan.forEach(foodItem => {
+        const mealDiv = document.createElement('div');
+        mealDiv.className = 'details';
+        mealDiv.innerHTML = `
+        
+        <img src="${image}"></img>  
+        <div> 
+        <p>${name}</p>
+
+        </div>
+       
+        `
+        upadanDetails.appendChild(mealDiv);
+    }
+    
+
 
 
 
