@@ -68,7 +68,7 @@ button{
 #upadanDetail{
     
     align-items: center;
-    margin: 100px ;
+    margin: 100px 500px 70px 500px;
     display: grid;
     grid-template-columns: repeat(4, 2fr);
     grid-gap:20px;
@@ -79,7 +79,7 @@ button{
     border:2px solid black;
     border-radius: 10px;
     text-align: center;
-    width:100%;
+    width:100%;   
 }
 .details img{
     width: 200px;
@@ -90,4 +90,8 @@ button{
     padding: 4px 0px;
     height: 50px;
     font-size: 21px;
+}
+.opadan-class{
+    background-color: black;
+    color: white;
 }

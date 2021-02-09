@@ -11,14 +11,20 @@ const searchMeal = () => {
 
 
 const displayMeals = foods => {
+
     const mealContainer = document.getElementById('mealList');
+
     mealContainer.innerHTML = '';
-  
+
+
+
+
     foods.forEach(food => {
+
         const mealDiv = document.createElement('div');
         mealDiv.className = 'meal';
         mealDiv.innerHTML = `
-        <div onclick=" getDetails('${food.strMealThumb}', '${food.strMeal}')">
+        <div onclick=" getDetails('${food.strMealThumb}', '${food.strMeal}', '${food.strIngredient1}', '${food.strIngredient2}', '${food.strIngredient3}', '${food.strIngredient4}',)">
         <img src="${food.strMealThumb}"></img>  
         <div> 
         <p>${food.strMeal}</p>
@@ -26,57 +32,45 @@ const displayMeals = foods => {
         </div>
         `
         mealContainer.appendChild(mealDiv);
+
     }
     );
+
+
 }
 
-const getDetails = (image, name) =>{
-    console.log(image, name);
+const getDetails = (image, name, opadan1, opadan2, opadan3, opadan4) => {
 
-     const upadanDetails = document.getElementById('upadanDetail');
-     upadanDetails.innerHTML = '';
+    const upadanDetails = document.getElementById('upadanDetail');
+    upadanDetails.innerHTML = '';
     // upadan.forEach(foodItem => {
-        const mealDiv = document.createElement('div');
-        mealDiv.className = 'details';
-        mealDiv.innerHTML = `
-        
-        <img src="${image}"></img>  
+    const mealDiv = document.createElement('div');
+    mealDiv.className = 'details';
+    mealDiv.innerHTML = `  
+            <img src="${image}"></img>  
         <div> 
-        <p>${name}</p>
-
+        <h4>${name}</h4>
         </div>
-       
+        <div class="opadan-class">
+        <p>Ingredients</P>
+        <div>
+            <ul>
+                <li>${opadan1}</li>
+                <li>${opadan2}</li>
+                <li>${opadan3}</li>
+                <li>${opadan4}</li>
+            </ul>
+        </div>
+        </div>
         `
-        upadanDetails.appendChild(mealDiv);
-    }
-    
+    upadanDetails.appendChild(mealDiv);
+  
+}
 
 
 
 
-//     const mealsDiv = document.getElementById('mealList');
-//     // for (let i = 0; i < meals.length; i++) {
-//     //     const food = meals[i];
-//     const mealDiv = document.createElement('div');
-//     mealDiv.className = 'meal';
-//     const mealInfo = `
-//     <img src="${food.strCategoryThumb}"></img>  
-//     <div>   <p><button onclick="displayMealDetail('${food.strCategoryThumb}')">${food.strCategory}</button></p>
 
-//     </div>
 
-//             `     
 
-//     mealDiv.innerHTML = mealInfo;
-//     mealsDiv.appendChild(mealDiv);
 
-// });
-// }
-
-// const displayMealDetail = name=>{
-// const url = `https://www.themealdb.com/api/json/v1/1/${name}`
-// console.log(url);
-// fetch(url)
-// .then(res => res.json())
-// .then(data => console.log(data.name));
-// }
